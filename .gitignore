@@ -1,0 +1,13 @@
+.idea
+
+*.db
+*.uuid
+*.log
+*.xml
+*.db-journal
+*.sqlite
+*.txt
+.HA_VERSION
+
+secrets.yaml
+deps
