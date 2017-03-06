@@ -1,0 +1,16 @@
+
+pi_rusi_phone:
+  hide_if_away: false
+  mac:
+  name: pi
+  picture:
+  track: true
+  vendor:
+
+tyouoamr_rusiphone:
+  hide_if_away: false
+  mac:
+  name: tyouoamr
+  picture:
+  track: true
+  vendor:

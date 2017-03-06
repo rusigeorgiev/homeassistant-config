@@ -1,0 +1,11 @@
+alias: Linghts on in the hallway
+trigger:
+  platform: numeric_state
+  entity_id: sensor.aeotec_zw100_multisensor_6_relative_humidity_2_5
+  above: 50
+action:
+  - service: persistent_notification.create
+    data:
+      title: 'Hard Drive Monitor:'
+      message: 'Your harddrive is running out of Space!'
+      notification_id: 'Critical Alert'

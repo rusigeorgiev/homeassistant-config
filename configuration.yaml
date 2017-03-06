@@ -1,0 +1,65 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 42.8333
+  longitude: 23.1333
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 549
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Sofia
+
+# Show links to resources in log and frontend
+introduction:
+
+# Enables the frontend
+frontend:
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  platform: google
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /srv/homeassistant/homeassistant_venv/lib/python3.4/site-packages/libopenzwave-0.3.2-py3.4-linux-armv7l.egg/config/
+
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+  keepalive: 60
+
+automation: !include_dir_list automations
+
+device_tracker: !include_dir_merge_list trackers
+
+group: !include_dir_named groups
+
+sensor: !include_dir_merge_list sensors
+
