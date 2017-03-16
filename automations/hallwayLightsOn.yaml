@@ -6,6 +6,6 @@ trigger:
 action:
   - service: persistent_notification.create
     data:
-      title: 'Hard Drive Monitor:'
-      message: 'Your harddrive is running out of Space!'
+      title: 'Test automation:'
+      message: 'It is too humid in the room!'
       notification_id: 'Critical Alert'
